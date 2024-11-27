@@ -52,7 +52,7 @@ fn gen_protobuf(file_path: &str,_output_data_file_path:&str)-> Result<(), Box<dy
         person.last_name = fields[0].to_string();
         person.date_of_birth = fields[2].to_string();
         //Serializing and writing
-        let protobuf_payload = person.write_to_bytes()?;
+        let protobuf_payload = person.write_to_bytes().expect("error in serializing");
         let payload_size = protobuf_payload.len();
         let mut varint_buffer = vec![];
         encode_varint(payload_size as u64, &mut varint_buffer);
