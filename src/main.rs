@@ -8,7 +8,7 @@ use std::fs::File;
 use std::io::Write;
 use prost::encoding::encode_varint;
 mod person;
-//rustfmt clippy
+
 fn main() -> Result<(), Box<dyn Error>>  {
     let matches = Command::new("Person Proto Buffer")
             .arg(
